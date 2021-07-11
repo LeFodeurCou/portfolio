@@ -232,7 +232,7 @@ section
 		&.borderAnimation:hover span:before,
 		&.borderAnimation:focus span:before
 		{
-			background-color: var(--fg-color);
+			background-color: var(--third-color);
 		}
 
 		& .screen-reader-text
@@ -284,7 +284,9 @@ section
 			{
 				&:not(:checked)~a
 				{
+					position: absolute;
 					left: 100vw;
+					// transition: 0.s;
 				}
 				
 				&:checked~label
