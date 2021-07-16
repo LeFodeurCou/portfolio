@@ -14,7 +14,6 @@ body
 	{
 		.homeBackgroundLight
 		{
-			// display: none;
 			opacity: 0;
 		}
 	}
@@ -27,12 +26,16 @@ body
 
 		.homeBackgroundDark
 		{
-			// display: none;
 			opacity: 0;
 		}
 	}
 
 	background-color: var(--bg-color);
+
+	main
+	{
+		overflow: hidden;
+	}
 }
 
 header
@@ -45,6 +48,7 @@ header
 	align-items: center;
 	background-color: var(--bg-color);
 	z-index: 10;
+	overflow: hidden;
 
 	> div:first-of-type
 	{
@@ -158,13 +162,14 @@ section
 .visitCard
 {
 	color: var(--fg-color);
-	padding-left: 15em;
+	padding-left: 10vw;
+	padding-right: 10vw;
 	padding-top: 10em;
 
 	h1
 	{
 		font-size: 16em;
-		line-height: 1em;
+		line-height: 0.8em;
 		margin-bottom: 0.2em;
 		font-family: Romanesco;
 
@@ -238,8 +243,9 @@ section
 		& .screen-reader-text
 		{
 			bottom: 0;
-			left: 0;
+			left: auto;
 			opacity: 0;
+			font-size: 2em;
 			transition: 0.7s;
 
 			&::first-letter
@@ -257,6 +263,7 @@ section
 			overflow: initial;
 			opacity: 1;
 			bottom: 100%;
+			font-size: 0.75em;
 		}
 	}
 }
@@ -286,7 +293,10 @@ section
 				{
 					position: absolute;
 					left: 100vw;
-					// transition: 0.s;
+					top: 100%;
+					opacity: 0;
+					font-size: 0.1em;
+					transition: 0s;
 				}
 				
 				&:checked~label
@@ -294,6 +304,31 @@ section
 					color: var(--third-color);
 				}
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px)
+{
+	.visitCard
+	{
+		padding-top: 5em;
+		text-align: center;
+
+		h1
+		{
+			font-size: 12em;
+		}
+
+
+		.visitCard-mail
+		{
+			font-size: 1.95em;
+		}
+
+		.visitCard-address
+		{
+			font-size: 1.5em;
 		}
 	}
 }
