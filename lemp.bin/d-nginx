@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ln -sf lemp.core/nginx/sites-available/lefodeurcou.local.conf nginx/sites-enabled/
-ln -sf lemp.core/nginx/sites-available/lefodeurcou.fr.conf nginx/sites-enabled/
+ln -sf lemp.core/nginx/sites-available/lefodeurcou.local.conf lemp.core/nginx/sites-enabled/
+ln -sf lemp.core/nginx/sites-available/lefodeurcou.fr.conf lemp.core/nginx/sites-enabled/
 
 docker network create web-containers 2> /dev/null
 
