@@ -31,6 +31,7 @@ body
 	}
 
 	background-color: var(--bg-color);
+	color: var(--fg-color);
 
 	main
 	{
@@ -167,7 +168,6 @@ section
 
 .visitCard
 {
-	color: var(--fg-color);
 	padding-left: 10vw;
 	padding-right: 10vw;
 	padding-top: 10em;
@@ -274,6 +274,64 @@ section
 	}
 }
 
+#bio
+{
+	padding-top: 5em;
+	font-size: 2em;
+
+	h2, p
+	{
+		margin: auto;
+		margin-bottom: 1em;
+		width: 800px;
+		max-width: 90vw;
+
+		abbr, b
+		{
+			color: var(--third-color);
+		}
+
+		a
+		{
+			color: var(--fg-color);
+			text-decoration: none;
+			position: relative;
+			display: inline-block;
+			overflow: hidden;
+			vertical-align: bottom;
+			font-weight: 600;
+
+			&::after
+			{
+				content: '';
+				position: absolute;
+				inset: 90% 0;
+				left: -100%;
+				height: 10%;
+				width: 100%;
+				transition: left 0.4s;
+				background-color: var(--third-color);
+			}
+
+			&:hover::after,
+			&:focus::after
+			{
+				left: 0;
+			}
+		}
+	}
+
+	h2
+	{
+		text-align: center;
+	}
+
+	p::first-letter
+	{
+		margin-left: 1.5em;
+	}
+}
+
 @media screen and (max-width: 1280px)
 {
 	header
@@ -318,7 +376,7 @@ section
 {
 	.visitCard
 	{
-		padding-top: 5em;
+		padding-top: 2em;
 		text-align: center;
 
 		h1
