@@ -51,38 +51,58 @@ header
 	z-index: 10;
 	overflow: hidden;
 
-	> div:first-of-type
+	> .themeTogglerWrapper
 	{
 		display: flex;
 		align-items: center;
-    
+		justify-content: center;
+		cursor: pointer;
+
 		img
 		{
+			margin: auto;
 			max-width: 5em;
 			height: 100%;
 		}
-		
-		button
+
+		.darkOrLight
 		{
-			margin-left: 1em;
-			height: 30px;
-			width: 30px;
+			position: absolute;
+			top: calc(0em - (5em / 3));
 			border-radius: 50%;
-			border: none;
-			background-color: transparent;
-			color: var(--fg-color);
-			cursor: pointer;
-			transition: 0.7s;
+			height: 5em;
+			width: 5em;
+			transform: rotate(-30deg);
+    		transition-timing-function: cubic-bezier(0.5, 2, 0, 1.8);
+			transition-duration: 0.2s;
+			z-index: -1;
 
-			&.moon
+			div
 			{
-				box-shadow: inset 8px 0px var(--fg-color), inset 8px 0px 1px 2px var(--fg-color);
-			}
+				position: absolute;
+				top: 100%;
+				height: 15px;
+				width: 15px;
+				border-radius: 50%;
+				border: none;
+				background-color: transparent;
+				color: var(--fg-color);
+				cursor: pointer;
+				transition: 0.7s;
 
-			&.sun
-			{
-				background: yellow;
-				box-shadow: 0 0 2px 2px white, 0 0 4px 4px yellow;
+				&.moon
+				{
+					box-shadow: inset 4px 0px var(--fg-color), inset 4px 0px 1px 1px var(--fg-color);
+					right: -0.1em;
+					transform: rotate(30deg);
+				}
+
+				&.sun
+				{
+					background: yellow;
+					box-shadow: 0 0 2px 2px white, 0 0 4px 4px yellow;
+					left: -0.1em;
+				}
 			}
 		}
 	}

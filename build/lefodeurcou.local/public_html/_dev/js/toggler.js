@@ -1,6 +1,7 @@
 export const themeToggler = () => {
 	const themeToggler = document.querySelector('.jsThemeToggler');
 
+	let day = false;
 	if (themeToggler)
 		themeToggler.addEventListener(
 		'click',
@@ -8,8 +9,13 @@ export const themeToggler = () => {
 			const body = document.querySelector('body');
 			if (body)
 				body.classList.toggle('light-theme');
-			themeToggler.classList.toggle('sun');
-			themeToggler.classList.toggle('moon');
+			const darkOrLight = themeToggler.querySelector('.jsRotate');
+			if (darkOrLight)
+			{
+				day = !day;
+				darkOrLight.style.transform = 'rotate(' + (day ? '30deg' : '-30deg') + ')';
+			}
+
 			
 		}
 		)
