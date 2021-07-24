@@ -387,7 +387,6 @@ header
 		ul
 		{
 			list-style: none;
-			margin-left: 1.5em;
 
 			li
 			{
@@ -397,6 +396,8 @@ header
 				{
 					position: absolute;
 					left: -2em;
+					top: 50%;
+					transform: translateY(-50%);
 				}
 			}
 		}
@@ -421,7 +422,9 @@ header
 
 	.project-card
 	{
-		width: 12em;
+		display: flex;
+		flex-direction: column;
+		max-width: 12em;
 		margin: 1em;
 		padding: 1em;
 		border-radius: 5px;
@@ -441,12 +444,23 @@ header
 		h3
 		{
 			text-align: center;
+			height: 3em;
 		}
 
 		.project-card-img-wrapper
 		{
 			position: relative;
+			flex-grow: 1;
+			display: flex;
+			align-items: center;
+			margin-top: 1em;
+			margin-bottom: 1em;
 			border-radius: 5px;
+
+			img
+			{
+				border-radius: 5px;
+			}
 
 			aside
 			{
@@ -471,16 +485,12 @@ header
 					border-radius: 5px;
 				}
 
-				&:hover, &:focus-within
-				{
-					opacity: 1;
-				}
-
 				a, label
 				{
 					position: relative;
 					margin-left: 1em;
 					margin-bottom: 0.2em;
+					padding: 0.2em;
 					display: inline-block;
 					overflow: hidden;
 					color: var(--bg-color);
@@ -488,30 +498,52 @@ header
 					text-indent: 1.5em;
 					z-index: 10;
 					cursor: pointer;
+					transition: 0.7s;
+
+					&:hover,
+					&:focus
+					{
+						color: var(--fg-color);
+					}
 		
 					&::after
 					{
 						content: '';
 						position: absolute;
-						inset: 90% 0;
+						inset: 0;
 						left: -100%;
-						height: 10%;
+						height: 100%;
 						width: 100%;
 						transition: left 0.4s;
 						background-color: var(--third-color);
+						opacity: 0.8;
+						z-index: -1;
 					}
 		
 					&:hover::after,
 					&:focus::after
 					{
-						left: calc(0% + 1.5em);
+						left: 0;
 					}
 
 					i
 					{
 						position: absolute;
-						left: -1.5em;
+						left: -1.3em;
+						top: 50%;
+						transform: translateY(-50%);
 					}
+				}
+			}
+		}
+
+		&:hover, &:focus-within
+		{
+			.project-card-img-wrapper
+			{
+				aside
+				{
+					opacity: 1;
 				}
 			}
 		}
