@@ -595,6 +595,32 @@ header
 						right: 1em;
 					}
 				}
+
+				div
+				{
+					position: absolute;
+					top: 10%;
+					left: 20%;
+					max-width: 60%;
+					z-index: inherit;
+
+					h3
+					{
+						display: flex;
+						align-items: center;
+						z-index: inherit;
+						font-size: 2em;
+						margin-bottom: 1em;
+
+						img
+						{
+							margin-right: 2em;
+							max-height: 100%;
+							display: inline;
+							z-index: inherit;
+						}
+					}
+				}
 			}
 		}
 
