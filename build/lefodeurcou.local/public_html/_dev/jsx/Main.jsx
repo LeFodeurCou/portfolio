@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { themeToggler } from '../js/toggler';
+import { bodyOverflow } from '../js/bodyOverflow';
 
 const Main = () => {
 
 	themeToggler();
+	bodyOverflow();
 
 	return (
 		<div>

@@ -551,13 +551,14 @@ header
 			input[type=checkbox] + aside + aside p
 			{
 				margin-left: 1em;
+				margin-bottom: 1em;
 				padding: 0.2em;
 				color: var(--fg-color);
 				z-index: 10;
 
 				label
 				{
-					position: absolute;
+					position: fixed;
 					top: 1em;
 					right: -9999em;
 					color: var(--fg-color);
@@ -579,12 +580,15 @@ header
 
 			input[type=checkbox]:checked + aside + aside
 			{
+				position: fixed;
 				left: 0;
 				opacity: 1;
 				z-index: 10;
+				overflow: auto;
 
 				&::before
 				{
+					position: fixed;
 					opacity: 1;
 				}
 
@@ -593,6 +597,11 @@ header
 					label
 					{
 						right: 1em;
+					}
+
+					br
+					{
+						margin-bottom: 0.3em;
 					}
 				}
 
@@ -635,6 +644,13 @@ header
 			}
 		}
 	}
+}
+
+#xp
+{
+	position: relative;
+	padding-top: 5em;
+	padding-bottom: 5em;
 }
 
 @media screen and (max-width: 1280px)
