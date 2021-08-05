@@ -411,7 +411,7 @@ header
 	padding-bottom: 5em;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around;
 	align-content: flex-start;
 
 	h2
@@ -656,6 +656,79 @@ header
 	position: relative;
 	padding-top: 5em;
 	padding-bottom: 5em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: flex-start;
+
+	h2
+	{
+		width: 100%;
+		text-align: center;
+	}
+	
+	.xp-wrapper
+	{
+		margin: 2em;
+		flex: 1 1 28%;
+		min-width: 20em;
+
+		h3
+		{
+			text-align: center;
+		}
+
+		& > ul
+		{
+			position: relative;
+			list-style: none;
+
+			&:before
+			{
+				content: "";
+				position: absolute;
+				inset: 0;
+				left: -0.1em;
+				height: 100%;
+				width: 0.2em;
+				background-color: var(--third-color);
+			}
+
+			& > li
+			{
+				position: relative;
+				min-height: 3em;
+				margin-bottom: 2em;
+
+				&:before
+				{
+					content: "";
+					position: absolute;
+					inset: 0;
+					top: -0.2em;
+					left: -3em;
+					height: 2em;
+					width: 2em;
+					border-radius: 50%;
+					background-color: var(--fg-color);
+				}
+
+				b, i
+				{
+					display: inline-block;
+					margin-bottom: 0.2em;
+				}
+
+				ul
+				{
+					li
+					{
+						margin-bottom: 1em;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 1280px)
