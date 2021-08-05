@@ -24,22 +24,23 @@ export const Contact = () => {
 				className='contact-form'
 			>
 				<input
-					type="text"
-					placeholder='name'
+					type='text'
+					placeholder='nom'
 					value={name}
 					onChange={e => setName(e.target.value)}
 					required
 				/>
 				<input
-					type="text"
+					type='text'
 					placeholder='mon.email@mail.fr'
 					value={mail}
 					onChange={e => setMail(e.target.value)}
 					required
 				/>
 				<textarea
-					onChange={e => setMsg(e.target.value)}
+					placeholder='Votre message ici'
 					value={msg}
+					onChange={e => setMsg(e.target.value)}
 					required
 				></textarea>
 				<button
