@@ -671,7 +671,7 @@ header
 	{
 		margin: 2em;
 		flex: 1 1 28%;
-		min-width: 20em;
+		// min-width: 20em;
 
 		h3
 		{
@@ -715,7 +715,7 @@ header
 
 				b, i
 				{
-					display: inline-block;
+					display: block;
 					margin-bottom: 0.2em;
 				}
 
@@ -723,7 +723,10 @@ header
 				{
 					li
 					{
+						position: relative;
+						left: -1em;
 						margin-bottom: 1em;
+						font-size: 0.9em;
 					}
 				}
 			}
