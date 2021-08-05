@@ -8,7 +8,10 @@ export const Contact = () => {
 	const [mail, setMail] = useState('');
 	const [msg, setMsg] = useState('');
 
-	console.log(msg);
+	const submitMsg = e => {
+		e.preventDefault();
+		alert(name + ' vous avez envoyé le message ' + msg + ' en signant de votre adresse mail : ' + mail);
+	};
 
 	return (
 		<React.Fragment>
@@ -25,19 +28,23 @@ export const Contact = () => {
 					placeholder='name'
 					value={name}
 					onChange={e => setName(e.target.value)}
+					required
 				/>
 				<input
 					type="text"
 					placeholder='mon.email@mail.fr'
 					value={mail}
 					onChange={e => setMail(e.target.value)}
+					required
 				/>
 				<textarea
 					onChange={e => setMsg(e.target.value)}
 					value={msg}
+					required
 				></textarea>
 				<button
 					type="submit"
+					onClick={submitMsg}
 				>
 					Envoyer
 				</button>
