@@ -1,91 +1,68 @@
-$fireCount: 100;
-$sunSize: 400px;
-
-
-#ui {
-  position: absolute;
-  top: 50%;
-  left: 75%;
-  z-index: -1;
-  
-  .cover {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: $sunSize - 20;
-    height: $sunSize - 20;
-    // background: #000;
-    transform: translate(-50%, -50%);
-    border-radius: 100%;
-    box-shadow: 0 0 50px 10px rgba(200, 0, 0, 0.5);
-  }
-  .sun {
-    position: absolute;
-    width: $sunSize - 20;
-    height: $sunSize - 20;
+.sun-bg {
+	position: absolute;
+	top: -120%;
+	right: -60%;
+	// left: 55%;
+	// top: -160rem;
+	// left: -160rem;
+	z-index: -1;
+	
+	width: 160rem;
+	height: 160rem;
+	background: radial-gradient(transparent 50%, white), radial-gradient(yellow, transparent 70%);
+	-webkit-mask-image: radial-gradient(rgba(0, 0, 0, 1.0) 40%, transparent 65%);
+	mask-image: radial-gradient(rgba(0, 0, 0, 1.0) 40%, transparent 65%);
 	border-radius: 50%;
-    transform: translate(-50%, -50%);
-    background: red;
-    filter: blur(10px) contrast(15);
-    
-    &_border {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: $sunSize;
-      height: $sunSize;
-      border: 15px solid yellow;
-      border-radius: 100%;
-      box-sizing: border-box;
-      transform: translate(-50%, -50%);
-    }
-    &_fire {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform-origin: 0 0;
-      
-      &_inner {
-        box-sizing: border-box;
-      }
-      
-      @for $i from 1 through $fireCount {
-        &:nth-child(#{$i}) {
-          animation: sunFire #{random(10000) + 5000}ms infinite linear;
-          
-          .sun_fire_inner {
-            $size: #{random(100) + 40}px;
-            width: $size;
-            height: $size;
-            border-top: #{random(10) + 5}px solid orange;
-            border-right: #{random(10) + 5}px solid orange;
-            border-bottom: #{random(10) + 5}px solid orange;
-            border-left: #{random(10) + 5}px solid orange;
-            border-radius: #{random(70) + 10 + '%'} #{random(70) + 10 + '%'} #{random(70) + 10 + '%'} #{random(70) + 10 + '%'};
-            animation: sunFireInner #{random(3000) + 2000}ms infinite alternate linear;
-          }
-        }
-      }
-    }    
-  }
+	
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform-origin: center;
+		border-radius: 50%;
+		-webkit-mask-image: radial-gradient(rgba(0, 0, 0, 1.0) 40%, transparent 65%);
+	mask-image: radial-gradient(rgba(0, 0, 0, 1.0) 40%, transparent 65%);
+	}
+	
+	&::before {
+		background: repeating-conic-gradient(from 0deg, yellow 0deg 20deg, transparent 20deg 40deg);
+		animation: rotate 720s linear, scale 3s linear infinite;
+	}
+	
+	&::after {
+		background: radial-gradient(yellow, orange 27%, transparent calc(27% + 3px) 100%), radial-gradient(gold, transparent 70%), repeating-conic-gradient(from 0deg, gold 0deg 5deg, transparent 5deg 10deg);
+		transform: rotate(15deg);
+		animation: rotate 360s linear;
+	}
 }
 
-@keyframes sunFire {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
 }
-@keyframes sunFireInner {
-  0% {
-    transform: translate($sunSize / 2 - 110, -50%) rotateZ(0deg);
-  }
-  50% {
-    transform: translate($sunSize / 2 - 60, -50%) rotateZ(180deg);
-  }
-  100% {
-    transform: translate($sunSize / 2 - 110, -50%) rotateZ(360deg);
-  }
+
+@keyframes scale {
+	0% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(1.2);
+	}
+	40% {
+		transform: scale(0.8);
+	}
+	60% {
+		transform: scale(1.1);
+	}
+	70% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+	}
 }

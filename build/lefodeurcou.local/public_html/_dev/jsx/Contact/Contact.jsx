@@ -3,14 +3,22 @@ import ReactDOM from 'react-dom';
 
 import './Contact.scss';
 
+import { Modal } from '../Modal/Modal';
+import { useCaptcha } from '../Captcha/Captcha';
+
 export const Contact = () => {
 	const [name, setName] = useState('');
 	const [mail, setMail] = useState('');
 	const [msg, setMsg] = useState('');
 	const [honeypot, setHoneypot] = useState(false);
+	
+	const [Captcha, verifyCaptcha] = useCaptcha();
 
 	const submitMsg = e => {
 		e.preventDefault();
+
+		if (!verifyCaptcha())
+			return;
 
 		const data = new FormData();
 		data.append('name', name);
@@ -66,12 +74,23 @@ export const Contact = () => {
 					onChange={e => setHoneypot(!honeypot)}
 					className='honeypot'
 				/>
-				<button
-					type="submit"
-					onClick={submitMsg}
+				<Modal
+					openerText='Envoyer'
+					closerText='Annuler'
+					submit={
+						<button
+							type="submit"
+							onClick={submitMsg}
+						>
+							Valider
+						</button>
+					}
 				>
-					Envoyer
-				</button>
+					<h3>
+						Captcha
+					</h3>
+					<Captcha />
+				</Modal>
 			</form>
 		</React.Fragment>
 	);

@@ -1,0 +1,60 @@
+.modal-opener
+{
+	display: inline;
+	margin: 2em auto;
+	padding: 1em 2em;
+	width: min-content;
+	border-radius: 5px;
+	background-color: var(--fg-color);
+	color: var(--bg-color);
+	cursor: pointer;
+}
+
+.modal-controler
+{
+	display: none;
+}
+
+.modal-background,
+.modal-core
+{
+	position: fixed;
+	inset: 0;
+}
+
+.modal-background
+{
+	background-color: var(--fg-color);
+	opacity: 0.2;
+	z-index: 15;
+}
+
+.modal-core
+{
+	width: 30em;
+	height: 20em;
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 5px;
+	background-color: var(--bg-color);
+	z-index: 20;
+
+	aside
+	{
+		width: 50%;
+		display: flex;
+		justify-content: space-around;
+	}
+
+}
+
+.modal-controler:not(:checked) + .modal-background,
+.modal-controler:not(:checked) + .modal-background + .modal-core
+{
+	display: none;
+}
