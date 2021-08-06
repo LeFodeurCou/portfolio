@@ -15,10 +15,11 @@ export const Contact = () => {
 	const [Captcha, verifyCaptcha] = useCaptcha();
 
 	const submitMsg = e => {
-		e.preventDefault();
-
 		if (!verifyCaptcha())
+		{
+			e.preventDefault();
 			return;
+		}
 
 		const data = new FormData();
 		data.append('name', name);
@@ -31,7 +32,7 @@ export const Contact = () => {
 			{
 				method: 'POST',
 				body: data,
-            	headers: new Headers(),
+				headers: new Headers(),
 			}
 		)
 		.then(response => response.json())
@@ -77,14 +78,7 @@ export const Contact = () => {
 				<Modal
 					openerText='Envoyer'
 					closerText='Annuler'
-					submit={
-						<button
-							type="submit"
-							onClick={submitMsg}
-						>
-							Valider
-						</button>
-					}
+					submit={submitMsg}
 				>
 					<h3>
 						Captcha

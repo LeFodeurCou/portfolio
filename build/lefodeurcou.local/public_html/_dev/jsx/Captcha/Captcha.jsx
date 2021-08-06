@@ -37,7 +37,9 @@ export const useCaptcha = () => {
 		() => {
 			return (
 				<React.Fragment>
-					{operation.sign} {result}
+					Combien font : {operandOne} {operation.sign} {operandTwo} ?
+					<br />
+					Indice : {result}
 					<input
 						type='number'
 						onChange={e => testValue = e.target.value}

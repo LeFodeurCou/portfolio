@@ -19,6 +19,19 @@ export const Modal = ({openerText, closerText, submit, children}) => {
 		});
 	};
 
+	const cancel = e => {
+		if (e.code == 'Enter' || e.code == 'Space')
+			document.getElementById('modal-controler-id').checked = false;
+	}
+
+	const validate = e => {
+		if (e.code == 'Enter' || e.code == 'Space')
+		{
+			submit(e);
+			document.getElementById('modal-controler-id').checked = false;
+		}
+	}
+
 	useEffect(() => {
 		bodyOverflow();
 	}, []);
@@ -46,12 +59,21 @@ export const Modal = ({openerText, closerText, submit, children}) => {
 				{children}
 				<aside>
 					<label
+						tabIndex='0'
 						htmlFor='modal-controler-id'
 						className='modal-closer js-modal-close'
+						onKeyPress={cancel}
 					>
 						{closerText}
 					</label>
-					{submit}
+					<label
+						tabIndex='0'
+						htmlFor='modal-controler-id'
+						onClick={submit}
+						onKeyPress={validate}
+					>
+						Valider
+					</label>
 				</aside>
 			</section>
 		</React.Fragment>
