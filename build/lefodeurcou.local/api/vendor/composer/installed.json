@@ -1,0 +1,53 @@
+{
+    "packages": [
+        {
+            "name": "lefodeurcou/crazy-router",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LeFodeurCou/crazy-router.git",
+                "reference": "1693745308e477cc401fcb25e6c34330f4c5e645"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LeFodeurCou/crazy-router/zipball/1693745308e477cc401fcb25e6c34330f4c5e645",
+                "reference": "1693745308e477cc401fcb25e6c34330f4c5e645",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "phpbench/phpbench": "^1.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "time": "2021-05-31T18:09:36+00:00",
+            "type": "package",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Crazy\\": "core/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Le Fodeur Cou",
+                    "email": "lefodeurcou@email.com"
+                }
+            ],
+            "description": "A fast router with great possibilities",
+            "support": {
+                "issues": "https://github.com/LeFodeurCou/crazy-router/issues",
+                "source": "https://github.com/LeFodeurCou/crazy-router/tree/1.0.0"
+            },
+            "install-path": "../lefodeurcou/crazy-router"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

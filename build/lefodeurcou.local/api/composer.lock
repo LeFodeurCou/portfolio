@@ -1,0 +1,63 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "a1e4b3cc07cc68a39e477dc2f62a9679",
+    "packages": [
+        {
+            "name": "lefodeurcou/crazy-router",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LeFodeurCou/crazy-router.git",
+                "reference": "1693745308e477cc401fcb25e6c34330f4c5e645"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LeFodeurCou/crazy-router/zipball/1693745308e477cc401fcb25e6c34330f4c5e645",
+                "reference": "1693745308e477cc401fcb25e6c34330f4c5e645",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "phpbench/phpbench": "^1.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Crazy\\": "core/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Le Fodeur Cou",
+                    "email": "lefodeurcou@email.com"
+                }
+            ],
+            "description": "A fast router with great possibilities",
+            "support": {
+                "issues": "https://github.com/LeFodeurCou/crazy-router/issues",
+                "source": "https://github.com/LeFodeurCou/crazy-router/tree/1.0.0"
+            },
+            "time": "2021-05-31T18:09:36+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}
