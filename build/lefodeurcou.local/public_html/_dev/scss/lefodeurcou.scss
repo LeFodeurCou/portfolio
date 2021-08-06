@@ -1,10 +1,17 @@
-body
+:root
 {
-	--bg-color: #0c0d13;
-	--fg-color: #00ffe0;
-	--third-color: #ff001f;
+	--light-color: #00dde0;
+	--dark-color: #112;
+	--secondary-color: #dd223f;
 	//#FF7744 OR # #AA001F
 	--alpha: 0.5;
+}
+
+body
+{
+	--bg-color: var(--dark-color);
+	--fg-color: var(--light-color);
+	--third-color: var(--secondary-color);
 
 	.homeBackgroundDark,
 	.homeBackgroundLight
@@ -22,9 +29,9 @@ body
 
 	&.light-theme
 	{
-		--bg-color: #00ffe0;
-		--fg-color: #0c0d13;
-		--third-color: #ff001f;
+		--bg-color: var(--light-color);
+		--fg-color: var(--dark-color);
+		--third-color: var(--secondary-color);
 
 		.homeBackgroundDark
 		{
