@@ -7,10 +7,28 @@ export const Contact = () => {
 	const [name, setName] = useState('');
 	const [mail, setMail] = useState('');
 	const [msg, setMsg] = useState('');
+	const [honeypot, setHoneypot] = useState(false);
 
 	const submitMsg = e => {
 		e.preventDefault();
-		alert(name + ' vous avez envoyé le message ' + msg + ' en signant de votre adresse mail : ' + mail);
+
+		const data = new FormData();
+		data.append('name', name);
+		data.append('mail', mail);
+		data.append('msg', msg);
+		data.append('honeypot', honeypot);
+
+		fetch(
+			'/api/v1/send/mail',
+			{
+				method: 'POST',
+				body: data,
+            	headers: new Headers(),
+			}
+		)
+		.then(response => response.json())
+		.then(json => console.log(json))
+		.catch(error => console.log(error));
 	};
 
 	return (
@@ -43,6 +61,11 @@ export const Contact = () => {
 					onChange={e => setMsg(e.target.value)}
 					required
 				></textarea>
+				<input
+					type='checkbox'
+					onChange={e => setHoneypot(!honeypot)}
+					className='honeypot'
+				/>
 				<button
 					type="submit"
 					onClick={submitMsg}

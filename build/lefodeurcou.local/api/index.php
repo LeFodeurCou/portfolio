@@ -23,7 +23,7 @@
 		);
 	});
 
-	$router->addRoute(Crazy\Router::GET, API_ROUTE . '/v1/send/mail', 'sendMail');
+	$router->addRoute(Crazy\Router::POST, API_ROUTE . '/v1/send/mail', 'sendMail');
 
 	$router->run();
 ?>
