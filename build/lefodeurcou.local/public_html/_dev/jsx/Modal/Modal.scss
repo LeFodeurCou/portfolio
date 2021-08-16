@@ -1,5 +1,7 @@
 .modal-opener
 {
+	position: relative;
+	top: 0;
 	display: inline;
 	margin: 2em auto;
 	padding: 1em 2em;
@@ -8,6 +10,15 @@
 	background-color: var(--fg-color);
 	color: var(--bg-color);
 	cursor: pointer;
+	transition: 0.4s;
+	box-shadow: none;
+
+	&:hover,
+	&:focus
+	{
+		top: -0.2em;
+		box-shadow: 2px 2px 2px var(--bg-color);
+	}
 }
 
 .modal-controler

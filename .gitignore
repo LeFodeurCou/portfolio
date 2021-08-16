@@ -19,6 +19,7 @@
 !lemp.core/**
 !build/
 !build/**
+build/lefodeurcou.local/api/settings/realSettings.php
 lemp.core/mysql/db/
 
 # End by ignoring git files

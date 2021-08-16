@@ -9,6 +9,7 @@
         }
     ],
     "require": {
-        "lefodeurcou/crazy-router": "^1.0"
+        "lefodeurcou/crazy-router": "^1.0",
+        "phpmailer/phpmailer": "^6.5"
     }
 }

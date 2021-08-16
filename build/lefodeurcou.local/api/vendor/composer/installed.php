@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ee4303cde3b002cd21c8022917ce53ffb6e222fd',
+    'reference' => '575b56ca81665ece051e4f58ae9b24997021e1df',
     'name' => 'nagrarok/api',
   ),
   'versions' => 
@@ -27,7 +27,16 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ee4303cde3b002cd21c8022917ce53ffb6e222fd',
+      'reference' => '575b56ca81665ece051e4f58ae9b24997021e1df',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.5.0',
+      'version' => '6.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a5b5c43e50b7fba655f793ad27303cd74c57363c',
     ),
   ),
 );

@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitbd48f324297207ce6392f3ae9c518340
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'C' => 
         array (
             'Crazy\\' => 6,
@@ -14,6 +18,10 @@ class ComposerStaticInitbd48f324297207ce6392f3ae9c518340
     );
 
     public static $prefixDirsPsr4 = array (
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Crazy\\' => 
         array (
             0 => __DIR__ . '/..' . '/lefodeurcou/crazy-router/core',
