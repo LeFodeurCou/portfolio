@@ -1,0 +1,3 @@
+[submodule "build/lefodeurcou.local/api/settings"]
+	path = build/lefodeurcou.local/api/settings
+	url = https://github.com/LeFodeurCou/portfolio-settings.git
