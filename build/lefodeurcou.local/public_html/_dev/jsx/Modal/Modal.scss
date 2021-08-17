@@ -3,7 +3,7 @@
 	position: relative;
 	top: 0;
 	display: inline;
-	margin: 2em auto;
+	margin: 1.5em auto;
 	padding: 1em 2em;
 	width: min-content;
 	border-radius: 5px;
@@ -31,6 +31,7 @@
 {
 	position: fixed;
 	inset: 0;
+	padding: 1em;
 }
 
 .modal-background

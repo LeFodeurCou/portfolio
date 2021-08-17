@@ -94,9 +94,9 @@ export const Contact = () => {
 				</Modal>
 				{
 					mailSent &&
-					<React.Fragment>
+					<p className="mail-sent">
 						Mail envoyé :D
-					</React.Fragment>
+					</p>
 				}
 			</form>
 		</React.Fragment>

@@ -79,7 +79,7 @@ export const Modal = ({openerText, closerText, submit, children}) => {
 						htmlFor='modal-controler-id'
 						onClick={submit}
 						onKeyPress={validate}
-						className='modal-validator'
+						className='modal-validator js-modal-close'
 					>
 						Valider
 					</label>
