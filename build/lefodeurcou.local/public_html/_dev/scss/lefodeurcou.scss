@@ -749,12 +749,13 @@ header
 	{
 		align-items: flex-start;
 		padding: 1em 2em;
+		overflow: initial;
     
     	nav
 		{
 			flex-direction: column;
 			align-items: flex-end;
-			overflow: hidden;
+			overflow: initial;
 		
 			label
 			{
@@ -769,11 +770,29 @@ header
 					position: absolute;
 					left: 100vw;
 					top: 100%;
+					width: 0;
 					opacity: 0;
 					font-size: 0.1em;
 					transition: 0s;
 				}
-				
+
+				&:checked~a
+				{
+					position: absolute;
+					right: 0;
+					width: 100vw;
+					background-color: var(--bg-color);
+					text-align: center;
+	
+					@for $i from 0 to 6
+					{
+						&:nth-of-type(#{$i + 1})
+						{
+							top: $i * 2.5em + 3em;
+						}
+					}
+				}
+
 				&:checked~label
 				{
 					color: var(--third-color);
