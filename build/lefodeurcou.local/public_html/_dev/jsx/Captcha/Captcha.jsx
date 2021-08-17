@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './Captcha.scss';
-
 
 // Usage : const [Captcha, verifyCaptcha] = useCaptcha();
 // Captcha is a component wich is used to present thing to do before validate current form
@@ -47,8 +45,8 @@ export const useCaptcha = () => {
 				</React.Fragment>
 			);
 		},
+		result,
 		() => {
-			console.log(testValue);
 			return testValue == result;
 		}
 	];

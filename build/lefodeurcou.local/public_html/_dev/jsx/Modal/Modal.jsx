@@ -19,6 +19,11 @@ export const Modal = ({openerText, closerText, submit, children}) => {
 		});
 	};
 
+	const open = e => {
+		if (e.code == 'Enter' || e.code == 'Space')
+			document.getElementById('modal-controler-id').checked = true;
+	}
+
 	const cancel = e => {
 		if (e.code == 'Enter' || e.code == 'Space')
 			document.getElementById('modal-controler-id').checked = false;
@@ -39,8 +44,10 @@ export const Modal = ({openerText, closerText, submit, children}) => {
 	return (
 		<React.Fragment>
 			<label
+				tabIndex='0'
 				htmlFor='modal-controler-id'
 				className='modal-opener js-modal-body-overflow'
+				onKeyPress={open}
 			>
 				{openerText}
 			</label>

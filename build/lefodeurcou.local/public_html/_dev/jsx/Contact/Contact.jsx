@@ -11,15 +11,21 @@ export const Contact = () => {
 	const [mail, setMail] = useState('');
 	const [msg, setMsg] = useState('');
 	const [honeypot, setHoneypot] = useState(false);
+
+	const [errorMsg, setErrorMsg] = useState('');
+	const [mailSent, setMailSent] = useState(false);
 	
-	const [Captcha, verifyCaptcha] = useCaptcha();
+	const [Captcha, result, verifyCaptcha] = useCaptcha();
 
 	const submitMsg = e => {
 		if (!verifyCaptcha())
 		{
 			e.preventDefault();
+			setErrorMsg('Réponse incorrecte, regardez l\'indice (C\'était ' + result + ') ;)');
 			return;
 		}
+
+		setMailSent(true);
 
 		const data = new FormData();
 		data.append('name', name);
@@ -84,7 +90,14 @@ export const Contact = () => {
 						Captcha
 					</h3>
 					<Captcha />
+					{errorMsg}
 				</Modal>
+				{
+					mailSent &&
+					<React.Fragment>
+						Mail envoyé :D
+					</React.Fragment>
+				}
 			</form>
 		</React.Fragment>
 	);
