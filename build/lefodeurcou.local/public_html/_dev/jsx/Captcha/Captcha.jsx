@@ -35,6 +35,8 @@ export const useCaptcha = () => {
 		() => {
 			return (
 				<React.Fragment>
+					Vérifions que vous n'êtes pas un robot ;D
+					<br />
 					Combien font : {operandOne} {operation.sign} {operandTwo} ?
 					<br />
 					Indice : {result}

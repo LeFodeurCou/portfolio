@@ -70,6 +70,7 @@ export const Modal = ({openerText, closerText, submit, children}) => {
 						htmlFor='modal-controler-id'
 						className='modal-closer js-modal-close'
 						onKeyPress={cancel}
+						className='modal-cancel'
 					>
 						{closerText}
 					</label>
@@ -78,6 +79,7 @@ export const Modal = ({openerText, closerText, submit, children}) => {
 						htmlFor='modal-controler-id'
 						onClick={submit}
 						onKeyPress={validate}
+						className='modal-validator'
 					>
 						Valider
 					</label>

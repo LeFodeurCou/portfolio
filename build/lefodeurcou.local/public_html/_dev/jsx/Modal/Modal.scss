@@ -17,7 +17,7 @@
 	&:focus
 	{
 		top: -0.2em;
-		box-shadow: 2px 2px 2px var(--bg-color);
+		box-shadow: 2px 2px 2px var(--third-color);
 	}
 }
 
@@ -68,4 +68,28 @@
 .modal-controler:not(:checked) + .modal-background + .modal-core
 {
 	display: none;
+}
+
+.modal-cancel
+{
+	padding: 1em 2em;
+}
+
+.modal-validator
+{
+	position: relative;
+	top: 0;
+	padding: 1em 2em;
+	border-radius: 5px;
+	background-color: var(--fg-color);
+	color: var(--bg-color);
+	transition: 0.4s;
+	box-shadow: none;
+
+	&:hover,
+	&:focus
+	{
+		top: -0.2em;
+		box-shadow: 2px 2px 2px var(--third-color);
+	}
 }
