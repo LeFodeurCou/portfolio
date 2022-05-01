@@ -10,21 +10,23 @@
 
 # Not ignore file I want to push
 
-
-!lemp
-# !lemp.env
-!lemp.bin/
-!lemp.bin/**
-!lemp.core/
-!lemp.core/**
-!build/
-!build/**
-build/lefodeurcou.local/api/settings/realSettings.php
-lemp.core/mysql/db/
+!package.json
+!package-lock.json
+!.babelrc
+!_dev
+!_dev/**
+!public
+!public/**
+!admin
+!admin/**
+!api
+!api/**
+/api/settings/realSettings.php
 
 # End by ignoring git files
 
 **/.git
 **/.gitignore
 !.gitignore
+!.gitmodules
 !README.md
