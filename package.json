@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "make-all-dir": "make-dir _dev/assets/ && make-dir _dev/scss/ && make-dir _dev/js/ && make-dir _dev/jsx/ && make-dir public",
     "del-not-usefull-dir": "del _dev/scss/ && del _dev/js/",
-    "start": "parcel _dev/index.html --out-dir public --open",
-    "mk": "make-dir public",
-    "clean": "del public",
-    "parcelDev": "parcel build _dev/index.html --out-dir public",
-    "dev": "NODE_ENV=dev run-s clean mk parcelDev",
-    "parcelProd": "parcel build --no-source-maps _dev/index.html --out-dir public",
-    "prod": "NODE_ENV=production run-s clean mk parcelProd"
+    "start": "parcel _dev/index.html --out-dir $npm_config_public --open",
+    "mk": "make-dir $npm_config_public",
+    "clean": "del --force $npm_config_public",
+    "parcelDev": "parcel build _dev/index.html --out-dir $npm_config_public",
+    "dev": "NODE_ENV=dev run-s clean mk parcelDev postRun",
+    "parcelProd": "parcel build --no-source-maps _dev/index.html --out-dir $npm_config_public",
+    "prod": "NODE_ENV=production run-s clean mk parcelProd postRun",
+    "postRun": "ncp admin $npm_config_public/admin/ && ncp api $npm_config_public/api/"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +32,7 @@
     "sass": "^1.35.2"
   },
   "dependencies": {
+    "ncp": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

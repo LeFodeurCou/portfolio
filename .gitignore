@@ -21,6 +21,8 @@
 !admin/**
 !api
 !api/**
+/api/vendor/
+/api/vendor/**
 /api/settings/realSettings.php
 
 # End by ignoring git files

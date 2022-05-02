@@ -1,7 +1,0 @@
-{
-    "runner.php_disable_ini": true,
-    "runner.bootstrap": "vendor/autoload.php",
-    "runner.path": "b-tests",
-
-    "runner.time_unit": "milliseconds"
-}
