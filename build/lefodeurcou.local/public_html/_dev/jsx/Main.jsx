@@ -15,5 +15,5 @@ const Main = () => {
 }
 
 let App = document.getElementById('contact');
-ReactDOM.render(<Main />, App);
+// ReactDOM.render(<Main />, App);
 
