@@ -11,9 +11,10 @@ const Main = () => {
 	themeToggler();
 	bodyOverflow();
 
-	return <Contact />;
+	return <React.Fragment></React.Fragment>;
+	// return <Contact />;
 }
 
 let App = document.getElementById('contact');
-// ReactDOM.render(<Main />, App);
+ReactDOM.render(<Main />, App);
 
